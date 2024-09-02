@@ -4,6 +4,9 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain_google_genai.embeddings import GoogleGenerativeAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.docstore.document import Document
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # PDF content into a variable
 def extract_text_from_pdf(file):
@@ -21,7 +24,7 @@ def create_document_from_text(text):
 # Initialize Google Generative AI Embeddings
 def initialize_gemini_embeddings():
     return GoogleGenerativeAIEmbeddings(
-        api_key=os.getenv("GOOGLE_API_KEY")  # Replace with your Google API key
+        api_key=os.getenv("GOOGLE_API_KEY") 
     )
 
 # Create the QnA chain
